@@ -1,0 +1,41 @@
+Интерфейс "SchoolKid"
+    абстрактный метод study()
+
+Интерфейс Playable
+    абстрактный метод play()
+
+Интерфейс Smoker
+    абстрактный метод smoke()
+
+Класс JuniorSchoolKid, наследующий от SchoolKid реализующий Playable
+    метод play()
+    метод gotoAftercare()
+    doAll void (){
+        play();
+        gotoAftercare();
+        study();
+    }
+
+Класс MiddleSchoolKid, наследующий от SchoolKid реализующий Playable, Smoker
+    метод play()
+    метод smoke()
+
+Класс SeniorSchoolKid, наследующий от SchoolKid, реализующий Smoker
+    метод smoke()
+    метод love()
+
+Клиентский код:
+
+    метод DoAll(SchoolKid sk){
+        if (sk instanceof (Playable){
+            sk.play()
+        } else {
+            .....
+        });
+    }
+
+    метод main:
+        создать массив
+        создать экземпляр класса
+        добавить в массив (повторить необходимое кол-во раз)
+        в цикле вызвать метод getDoAll()
